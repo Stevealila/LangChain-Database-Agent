@@ -1,8 +1,8 @@
-## LangChain Database Agent
+# LangChain Database Agent
 
 A conversational AI agent that manages PostgreSQL database operations with human-in-the-loop approval for sensitive actions. Built with LangChain, LangGraph, and Google's Gemini model.
 
-### Setup
+## Setup
 
 1. **Clone the repository:**
 ```bash
@@ -10,12 +10,18 @@ git clone https://github.com/Stevealila/LangChain-Database-Agent.git
 cd LangChain-Database-Agent
 ```
 
-2. **Sync dependencies:**
+2. **Create and activate virtual environment:**
+```bash
+uv venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
+
+3. **Sync dependencies:**
 ```bash
 uv sync
 ```
 
-2. **Configure environment variables:**
+4. **Configure environment variables:**
 
 Create a `.env` file with your PostgreSQL and Google AI credentials:
 ```env
@@ -26,17 +32,17 @@ PG_PASSWORD=your_password
 GOOGLE_API_KEY=your_google_api_key
 ```
 
-3. **Initialize the database:**
+5. **Initialize the database:**
 
 The agent will automatically create the `users` table on first run if it doesn't exist.
 
-### Run
+## Run
 
 ```bash
 uv run main.py
 ```
 
-### Example Usage
+## Example Usage
 
 The agent understands natural language. Here are example interactions:
 

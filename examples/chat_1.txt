@@ -1,0 +1,94 @@
+You: Hi
+================================== Ai Message ==================================
+
+Hello! How can I help you today?
+You: List users we have 
+================================== Ai Message ==================================
+Tool Calls:
+  db_read_users (937fea9f-11c5-4537-9ed9-b9cc9ef9db9a)
+ Call ID: 937fea9f-11c5-4537-9ed9-b9cc9ef9db9a
+  Args:
+================================= Tool Message =================================
+Name: db_read_users
+
+[RealDictRow({'id': 41, 'name': 'Sam Smith', 'email': 'samsmith@node.org', 'created_at': datetime.datetime(2025, 11, 26, 18, 24, 49, 141633)}), RealDictRow({'id': 45, 'name': 'Jane Doe', 'email': 'janedoe@cplusplus.org', 'created_at': datetime.datetime(2025, 11, 26, 18, 40, 31, 954774)}), RealDictRow({'id': 46, 'name': 'John Doe', 'email': 'john.doe@company.net', 'created_at': datetime.datetime(2025, 11, 26, 18, 58, 41, 44647)})]
+================================== Ai Message ==================================
+
+The users we have are: Sam Smith (samsmith@node.org), Jane Doe (janedoe@cplusplus.org), and John Doe (john.doe@company.net).
+You: How many are they?
+================================== Ai Message ==================================
+
+There are 3 users.
+You: Is Sam among them?
+================================== Ai Message ==================================
+
+Yes, Sam Smith (samsmith@node.org) is among them.
+You: Add Steve Alila, stevealila25@gmail.com
+================================== Ai Message ==================================
+Tool Calls:
+  db_insert_user (a9b9bedb-ea1f-44ab-a632-869b0b6a3cf2)
+ Call ID: a9b9bedb-ea1f-44ab-a632-869b0b6a3cf2
+  Args:
+    name: Steve Alila
+    email: stevealila25@gmail.com
+INTERRUPT: Saving user requires your approval
+Are sure you want to add Steve Alila, stevealila25@gmail.com? Allowed decisions: approve, reject
+
+Your decision (approve/reject): approve
+approve
+================================== Ai Message ==================================
+
+Record inserted with ID: 47
+You: How about Steve?
+================================== Ai Message ==================================
+Tool Calls:
+  db_read_users (60ccc8d6-df0d-4b3a-9acb-329f3fa58699)
+ Call ID: 60ccc8d6-df0d-4b3a-9acb-329f3fa58699
+  Args:
+================================= Tool Message =================================
+Name: db_read_users
+
+[RealDictRow({'id': 41, 'name': 'Sam Smith', 'email': 'samsmith@node.org', 'created_at': datetime.datetime(2025, 11, 26, 18, 24, 49, 141633)}), RealDictRow({'id': 45, 'name': 'Jane Doe', 'email': 'janedoe@cplusplus.org', 'created_at': datetime.datetime(2025, 11, 26, 18, 40, 31, 954774)}), RealDictRow({'id': 46, 'name': 'John Doe', 'email': 'john.doe@company.net', 'created_at': datetime.datetime(2025, 11, 26, 18, 58, 41, 44647)}), RealDictRow({'id': 47, 'name': 'Steve Alila', 'email': 'stevealila25@gmail.com', 'created_at': datetime.datetime(2025, 11, 27, 10, 4, 3, 943178)})]
+================================== Ai Message ==================================
+
+Yes, Steve Alila (stevealila25@gmail.com) is now among the users.
+You: List all user with names only, no email
+================================== Ai Message ==================================
+
+The users are: Sam Smith, Jane Doe, John Doe, and Steve Alila.
+You: Apart from searching and adding users, what else can you do?
+================================== Ai Message ==================================
+
+I can also delete users.
+You: Let us delete Sam Smith, samsmith@node.org
+================================== Ai Message ==================================
+Tool Calls:
+  db_delete_user (ab489170-4abd-49eb-bd03-32557a341392)
+ Call ID: ab489170-4abd-49eb-bd03-32557a341392
+  Args:
+    user_email: samsmith@node.org
+================================= Tool Message =================================
+Name: db_delete_user
+
+Successfully deleted 1 record(s) with email 'samsmith@node.org'
+================================== Ai Message ==================================
+
+Sam Smith has been deleted.
+You: Now list all users
+================================== Ai Message ==================================
+Tool Calls:
+  db_read_users (ab6e1052-65bd-42f3-9073-47035888e9c0)
+ Call ID: ab6e1052-65bd-42f3-9073-47035888e9c0
+  Args:
+================================= Tool Message =================================
+Name: db_read_users
+
+[RealDictRow({'id': 45, 'name': 'Jane Doe', 'email': 'janedoe@cplusplus.org', 'created_at': datetime.datetime(2025, 11, 26, 18, 40, 31, 954774)}), RealDictRow({'id': 46, 'name': 'John Doe', 'email': 'john.doe@company.net', 'created_at': datetime.datetime(2025, 11, 26, 18, 58, 41, 44647)}), RealDictRow({'id': 47, 'name': 'Steve Alila', 'email': 'stevealila25@gmail.com', 'created_at': datetime.datetime(2025, 11, 27, 10, 4, 3, 943178)})]
+================================== Ai Message ==================================
+
+The users are: Jane Doe (janedoe@cplusplus.org), John Doe (john.doe@company.net), and Steve Alila (stevealila25@gmail.com).
+You: Thank you, Gemini!
+================================== Ai Message ==================================
+
+You're welcome! Let me know if there's anything else I can help you with.
+You: q

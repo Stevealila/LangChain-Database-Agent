@@ -61,7 +61,7 @@ The agent will pause and ask for approval before inserting the record.
 
 **Delete a user:**
 ```
-You: Remove Steve Alila, stevealila25@gmail.com
+You: Remove John Doe, john.doe@company.net?
 ```
 
 **Exit:**

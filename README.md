@@ -21,20 +21,24 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 uv sync
 ```
 
-4. **Configure environment variables:**
+4. **Create a PostgreSQL database** (skip if you already have one):
 
-Create a `.env` file with your PostgreSQL and Google AI credentials:
+- **Linux:** `sudo -u postgres psql -c "CREATE DATABASE mydb;"`
+- **macOS:** `psql postgres -c "CREATE DATABASE mydb;"`
+- **Windows:** open pgAdmin or the SQL Shell and run `CREATE DATABASE mydb;`
+
+5. **Configure environment variables:**
+
+Copy `.env.example` to `.env` and fill in your credentials:
 ```env
-PG_HOST=your_postgres_host
-PG_DATABASE=your_database_name
-PG_USER=your_username
-PG_PASSWORD=your_password
+PG_HOST=localhost
+PG_DATABASE=mydb
+PG_USER=postgres
+PG_PASSWORD=your_postgres_password
 GOOGLE_API_KEY=your_google_api_key
 ```
 
-5. **Initialize the database:**
-
-The agent will automatically create the `users` table on first run if it doesn't exist.
+> The `users` table is created automatically on first run.
 
 ## Run
 

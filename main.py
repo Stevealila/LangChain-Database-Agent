@@ -4,9 +4,11 @@ from langchain.agents.middleware import HumanInTheLoopMiddleware
 from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.types import Command
 from dotenv import load_dotenv
+from db import User
 from tools import db_insert_user_tool, db_read_users_tool, db_delete_user_tool
 
 load_dotenv()
+User().create_table()
 
 agent = create_agent(
     model="google_genai:gemini-2.5-flash-lite",
